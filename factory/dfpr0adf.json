@@ -1,0 +1,15 @@
+{
+	"name": "dfpr0adf",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "db6fa76d-7cdf-4e07-8dd6-0bad55f7ee6b",
+		"tenantId": "55ab2616-1956-425c-b47c-1295c64cb3e2"
+	}
+}
