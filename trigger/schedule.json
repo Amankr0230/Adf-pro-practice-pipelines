@@ -8,6 +8,11 @@
 				"pipelineReference": {
 					"referenceName": "scheduled",
 					"type": "PipelineReference"
+				},
+				"parameters": {
+					"schema": "source",
+					"table": "orders",
+					"backdate": "''"
 				}
 			}
 		],
