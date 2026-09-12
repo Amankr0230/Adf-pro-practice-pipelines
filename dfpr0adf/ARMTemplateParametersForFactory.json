@@ -31,6 +31,9 @@
 		},
 		"schedule_properties_scheduled_parameters_backdate": {
 			"value": "''"
+		},
+		"ls_rest_properties_typeProperties_url": {
+			"value": "https://pokeapi.co/api/v2/pokemon"
 		}
 	}
 }
