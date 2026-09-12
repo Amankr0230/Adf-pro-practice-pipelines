@@ -30,6 +30,18 @@
 		"ls_datalake_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://dfpr0storageaccount.dfs.core.windows.net/"
+		},
+		"schedule_properties_scheduled_parameters_schema": {
+			"type": "string",
+			"defaultValue": "source"
+		},
+		"schedule_properties_scheduled_parameters_table": {
+			"type": "string",
+			"defaultValue": "orders"
+		},
+		"schedule_properties_scheduled_parameters_backdate": {
+			"type": "string",
+			"defaultValue": "''"
 		}
 	},
 	"variables": {
@@ -476,8 +488,18 @@
 							},
 							"waitOnCompletion": true,
 							"parameters": {
-								"schema": "source",
-								"table": "orders"
+								"schema": {
+									"value": "@pipeline().parameters.schema",
+									"type": "Expression"
+								},
+								"table": {
+									"value": "@pipeline().parameters.table",
+									"type": "Expression"
+								},
+								"backdate": {
+									"value": "@pipeline().parameters.backdate",
+									"type": "Expression"
+								}
 							}
 						}
 					},
@@ -514,6 +536,19 @@
 				"policy": {
 					"elapsedTimeMetric": {}
 				},
+				"parameters": {
+					"schema": {
+						"type": "string",
+						"defaultValue": "source"
+					},
+					"table": {
+						"type": "string",
+						"defaultValue": "orders"
+					},
+					"backdate": {
+						"type": "string"
+					}
+				},
 				"annotations": []
 			},
 			"dependsOn": [
@@ -533,7 +568,11 @@
 							"referenceName": "scheduled",
 							"type": "PipelineReference"
 						},
-						"parameters": {}
+						"parameters": {
+							"schema": "[parameters('schedule_properties_scheduled_parameters_schema')]",
+							"table": "[parameters('schedule_properties_scheduled_parameters_table')]",
+							"backdate": "[parameters('schedule_properties_scheduled_parameters_backdate')]"
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
