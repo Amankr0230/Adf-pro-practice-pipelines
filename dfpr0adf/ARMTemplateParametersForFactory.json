@@ -23,6 +23,9 @@
 		"ls_datalake_properties_typeProperties_url": {
 			"value": "https://dfpr0storageaccount.dfs.core.windows.net/"
 		},
+		"ls_rest_properties_typeProperties_url": {
+			"value": "https://pokeapi.co/api/v2/pokemon"
+		},
 		"schedule_properties_scheduled_parameters_schema": {
 			"value": "source"
 		},
@@ -31,9 +34,6 @@
 		},
 		"schedule_properties_scheduled_parameters_backdate": {
 			"value": "''"
-		},
-		"ls_rest_properties_typeProperties_url": {
-			"value": "https://pokeapi.co/api/v2/pokemon"
 		}
 	}
 }

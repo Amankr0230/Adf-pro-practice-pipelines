@@ -31,6 +31,10 @@
 			"type": "string",
 			"defaultValue": "https://dfpr0storageaccount.dfs.core.windows.net/"
 		},
+		"ls_rest_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://pokeapi.co/api/v2/pokemon"
+		},
 		"schedule_properties_scheduled_parameters_schema": {
 			"type": "string",
 			"defaultValue": "source"
@@ -42,10 +46,6 @@
 		"schedule_properties_scheduled_parameters_backdate": {
 			"type": "string",
 			"defaultValue": "''"
-		},
-		"ls_rest_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://pokeapi.co/api/v2/pokemon"
 		},
 		"containerUri": {
 			"type": "string",
