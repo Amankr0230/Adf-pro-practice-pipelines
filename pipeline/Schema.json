@@ -96,7 +96,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"p_container": "source",
-										"p_folder": "files ",
+										"p_folder": "@trim('files')",
 										"p_file": {
 											"value": "@trim(item().name)",
 											"type": "Expression"
