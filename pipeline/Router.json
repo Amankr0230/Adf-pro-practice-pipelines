@@ -24,6 +24,7 @@
 					],
 					"storeSettings": {
 						"type": "AzureBlobFSReadSettings",
+						"recursive": true,
 						"enablePartitionDiscovery": false
 					},
 					"formatSettings": {
@@ -114,7 +115,10 @@
 														"type": "DatasetReference",
 														"parameters": {
 															"p_container": "source",
-															"p_folder": "files",
+															"p_folder": {
+																"value": "@trim('files')",
+																"type": "Expression"
+															},
 															"p_file": {
 																"value": "@item().name",
 																"type": "Expression"
@@ -193,7 +197,10 @@
 														"type": "DatasetReference",
 														"parameters": {
 															"p_container": "source",
-															"p_folder": "files",
+															"p_folder": {
+																"value": "@trim('files')",
+																"type": "Expression"
+															},
 															"p_file": {
 																"value": "@item().name",
 																"type": "Expression"
@@ -272,7 +279,10 @@
 														"type": "DatasetReference",
 														"parameters": {
 															"p_container": "source",
-															"p_folder": "files",
+															"p_folder": {
+																"value": "@trim('files')",
+																"type": "Expression"
+															},
 															"p_file": {
 																"value": "@item().name",
 																"type": "Expression"
