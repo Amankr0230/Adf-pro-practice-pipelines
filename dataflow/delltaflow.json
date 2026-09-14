@@ -1,0 +1,39 @@
+{
+	"name": "delltaflow",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "ds_csv_dynamic",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [],
+			"transformations": [
+				{
+					"name": "sort1"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          location_id as short,",
+				"          city as string,",
+				"          state as string,",
+				"          country as string,",
+				"          latitude as double,",
+				"          longitude as double,",
+				"          last_updated_timestamp as timestamp",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source1",
+				"source1 sort(asc(city, true),",
+				"     caseInsensitive: true) ~> sort1"
+			]
+		}
+	}
+}
