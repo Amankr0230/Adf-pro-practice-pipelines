@@ -98,7 +98,7 @@
 										"p_container": "source",
 										"p_folder": "files ",
 										"p_file": {
-											"value": "@item().name",
+											"value": "@trim(item().name)",
 											"type": "Expression"
 										}
 									}
